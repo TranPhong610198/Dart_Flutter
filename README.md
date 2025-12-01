@@ -87,7 +87,7 @@ Toàn bộ lộ trình được chia thành nhiều giai đoạn rõ ràng:
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Dart Language Tour            | [https://dart.dev/language](https://dart.dev/language)                                                                     |
 | Flutter Documentation         | [https://docs.flutter.dev](https://docs.flutter.dev)                                                                       |
-| GeeksForGeeks Dart Tutorial   | [https://www.geeksforgeeks.org/dart-programming-language/](https://www.geeksforgeeks.org/dart/dart-tutorial/)       |
+| GeeksForGeeks Dart Tutorial   | [Dart Turtorial](https://www.geeksforgeeks.org/dart/dart-tutorial/)       |
 | Youtube – Dart Course | [Codemy.com](https://youtu.be/JZukfxvc7Mc?si=dT-42VQ8lM85lib9) |
 
 ---
