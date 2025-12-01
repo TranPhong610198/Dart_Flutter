@@ -33,7 +33,7 @@ Toàn bộ lộ trình được chia thành nhiều giai đoạn rõ ràng:
 * OOP & Classes
 * Fizzbuzz Exercise
 
-### **📌 Giai đoạn 2 — Flutter UI Cơ Bản** *(In progress)*
+### **📌 Giai đoạn 2 — Flutter UI Cơ Bản** *(Upcoming)*
 
 * [ ] Cấu trúc thư mục Flutter
 * [ ] Widgets cơ bản: Container, Row, Column, Stack, ListView
@@ -75,8 +75,8 @@ Toàn bộ lộ trình được chia thành nhiều giai đoạn rõ ràng:
 | Danh mục        | Công cụ                  |
 | --------------- | ------------------------ |
 | IDE             | VS Code / Android Studio |
-| UI Design       | Figma                    |
-| API Testing     | Postman                  |
+| UI Design       |                     |
+| API Testing     |                   |
 | Version Control | Git + GitHub             |
 
 ---
@@ -94,7 +94,7 @@ Toàn bộ lộ trình được chia thành nhiều giai đoạn rõ ràng:
 
 <div align="center">
 
-### ✨ Cảm ơn **chính mình** vì đã kiên trì và luôn cố gắng.
+### ✨ Cảm ơn **GPT** vì đã tạo file README dùm tôi.
 
 Hành trình vẫn còn dài — cố lên nào 💙🔥
 
