@@ -1,274 +1,101 @@
 <div align="center">
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.png" width="160" alt="Flutter Logo" />
 
+# 🚀 Hành Trình Chinh Phục Flutter & Dart
 
-<img src="https://www.google.com/search?q=https://storage.googleapis.com/cms-storage-bucket/0dbfcc7a59cd1cf16282.png" width="200" alt="Flutter Logo" />
-
-
-
-🚀 Hành Trình Chinh Phục Flutter \& Dart
-
-
-
-"Dart \& Flutter - Từ Zero đến Hero"
-
-
+### **"Dart & Flutter - Từ Zero đến Hero"**
 
 </div>
 
+---
 
+## 👋 Giới Thiệu
 
-👋 Giới Thiệu
+Chào mừng đến với repository học tập của tôi! Đây là nơi lưu trữ mã nguồn, ghi chú và những dự án thực hành được thực hiện trong quá trình tự học lập trình Mobile App bằng **Dart & Flutter**.
 
+🎯 **Mục tiêu**: Nắm vững kiến thức từ cơ bản → nâng cao để có thể tự xây dựng và triển khai ứng dụng lên **Android & iOS**.
 
+---
 
-Chào mừng đến với repository học tập của tôi! Đây là nơi tôi lưu trữ tất cả mã nguồn, ghi chú và các dự án nhỏ trong quá trình tự học lập trình Mobile App với Dart và Flutter Framework.
+## 🗺️ Lộ Trình Học Tập (Roadmap)
 
+Toàn bộ lộ trình được chia thành nhiều giai đoạn rõ ràng:
 
+### **📌 Giai đoạn 1 — Dart Cơ Bản**
 
-Mục tiêu của tôi là nắm vững kiến thức từ cơ bản đến nâng cao để có thể tự tay xây dựng những ứng dụng đa nền tảng (Android \& iOS) 
+* Installing Dart
+* Data Types
+* Dart Loops & Logic
+* Functions
+* User Input
+* Type Conversion (String ↔ Int)
+* OOP & Classes
+* Fizzbuzz Exercise
 
+### **📌 Giai đoạn 2 — Flutter UI Cơ Bản** *(In progress)*
 
+* [ ] Cấu trúc thư mục Flutter
+* [ ] Widgets cơ bản: Container, Row, Column, Stack, ListView
+* [ ] Stateful vs Stateless Widgets
+* [ ] Forms & Input Handling
+* [ ] Navigation (Navigator / GoRouter)
+* [ ] Assets, Fonts & Images
+* [ ] Responsive UI
 
-🗺️ Lộ Trình Học Tập (Roadmap)
+### **📌 Giai đoạn 3 — Logic & Data Handling** *(Upcoming)*
 
+* [ ] Networking — REST API, HTTP, JSON
+* [ ] Local Storage — SharedPrefs, SQLite/Drift, Hive
+* [ ] State Management — Provider / Riverpod / BloC
+* [ ] Firebase — Auth, Firestore, Cloud Functions
 
+### **📌 Giai đoạn 4 — Advanced & Deploy** *(Upcoming)*
 
-Dưới đây là checklist những gì tôi đã, đang và sẽ học.
+* [ ] Animation
+* [ ] Clean Architecture
+* [ ] Testing (Unit & Widget Test)
+* [ ] CI/CD pipelines
+* [ ] Deploy Play Store / App Store
 
+---
 
+## 📱 Dự Án Thực Hành
 
-Giai đoạn 1: Nền tảng Dart 🎯
+| STT | Tên Dự Án               | Mô tả                                | Công nghệ             | Trạng thái       | Preview        |
+| --: | ----------------------- | ------------------------------------ | --------------------- | ---------------- | -------------- |
+|  01 | Hello World App         | Làm quen widget cơ bản               | Dart + Flutter UI     | 🔄 Đang học      | *comming soon* |
+|  02 | Todo List App           | Quản lý công việc, CRUD LocalStorage | Flutter + Hive/SQLite | ⏳ Chưa thực hiện | *comming soon* |
+|  03 | Weather App *(dự kiến)* | Call API thời tiết realtime          | Flutter + HTTP API    | 🚧 Planned       | *updating*     |
 
+---
 
+## 🛠️ Công Cụ Sử Dụng
 
-Installing Dart
+| Danh mục        | Công cụ                  |
+| --------------- | ------------------------ |
+| IDE             | VS Code / Android Studio |
+| UI Design       | Figma                    |
+| API Testing     | Postman                  |
+| Version Control | Git + GitHub             |
 
+---
 
+## 📚 Tài Liệu Học & Link Tham Khảo
 
-Data Types
+| Tên tài liệu                  | Link                                                                                                                       |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| Dart Language Tour            | [https://dart.dev/language](https://dart.dev/language)                                                                     |
+| Flutter Documentation         | [https://docs.flutter.dev](https://docs.flutter.dev)                                                                       |
+| GeeksForGeeks Dart Tutorial   | [https://www.geeksforgeeks.org/dart-programming-language/](https://www.geeksforgeeks.org/dart/dart-tutorial/)       |
+| Youtube – Dart Course | [Codemy.com](https://youtu.be/JZukfxvc7Mc?si=dT-42VQ8lM85lib9) |
 
-
-
-Dart Loops, Logic
-
-
-
-Dart Functions
-
-
-
-User Input
-
-
-
-String To Integer Conversiond
-
-
-
-User Input Type Conversion
-
-
-
-Dart Fizzbuzz :))))
-
-
-
-Classes and OOP
-
-
-
-Giai đoạn 2: Flutter Cơ Bản (UI Building) 🎨 - Not Yet
-
-
-
-\[ ] Cấu trúc thư mục Flutter
-
-
-
-\[ ] Widgets cơ bản (Container, Row, Column, Stack, ListView)
-
-
-
-\[ ] Stateful vs Stateless Widgets
-
-
-
-\[ ] Forms \& User Input
-
-
-
-\[ ] Navigation \& Routing (Navigator 1.0/2.0, GoRouter)
-
-
-
-\[ ] Assets, Fonts \& Images
-
-
-
-\[ ] Responsive Design
-
-
-
-Giai đoạn 3: Logic \& Data ⚙️ - Not Yet
-
-
-
-\[ ] Networking (HTTP Requests, REST API, JSON Parsing)
-
-
-
-\[ ] Local Storage (Shared Preferences, SQLite/Drift, Hive)
-
-
-
-\[ ] State Management (Provider / Riverpod / BLoC) ⚡
-
-
-
-\[ ] Firebase Integration (Auth, Firestore, Cloud Functions)
-
-
-
-Giai đoạn 4: Nâng Cao \& Deploy 🚀 - Not Yet
-
-
-
-\[ ] Animations \& Motion
-
-
-
-\[ ] Clean Architecture
-
-
-
-\[ ] Unit Testing \& Widget Testing
-
-
-
-\[ ] CI/CD
-
-
-
-\[ ] Publish app lên Google Play Store / App Store
-
-
-
-📱 Các Dự Án Thực Hành (Showcase) 
-
-
-
-Dự Án
-
-
-
-Mô Tả
-
-
-
-Tech Stack
-
-
-
-Trạng Thái
-
-
-
-Preview
-
-
-
-01\. Hello World
-
-
-
-Ứng dụng đầu tiên, làm quen widget
-
-
-
-Basic Widgets
-
-
-
-Notyet
-
-
-
-Link
-
-
-
-02\. Todo List
-
-
-
-Quản lý công việc hàng ngày
-
-
-
-CRUD, Local Storage
-
-
-
-Notyet
-
-
-
-Link
-
-
-
-
-
-
-
-🛠️ Công Cụ Sử Dụng
-
-
-
-IDE: Visual Studio Code / Android Studio
-
-
-
-Design: Figma (để tham khảo UI) - maybe
-
-
-
-API Testing: Postman - maybe
-
-
-
-Version Control: Git \& GitHub
-
-
-
-📚 Tài Liệu Tham Khảo
-
-
-
-Những nguồn tài liệu tuyệt vời mà tôi đang theo học:
-
-
-
-Dart Language Tour - Học Dart bài bản. - Có thể xem qua
-
-
-
-Dart Tutorial - Tài liệu Geeks4geeks.
-
-
-
-Dart Programing Languge - Video hướng dẫn từ Youtube.
-
-
+---
 
 <div align="center">
 
+### ✨ Cảm ơn **chính mình** vì đã kiên trì và luôn cố gắng.
 
-
-Thank Gemini for this readme file :))))
-
-
+Hành trình vẫn còn dài — cố lên nào 💙🔥
 
 </div>
-
