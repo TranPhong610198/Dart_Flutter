@@ -1,6 +1,7 @@
 <div align="center">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Google-flutter-logo.png" width="160" alt="Flutter Logo" />
+<img src="https://raw.githubusercontent.com/dart-lang/site-shared/master/src/_assets/image/dart/logo/64.png" width="110" style="margin-right:15px;">
+<img src="https://raw.githubusercontent.com/flutter/website/master/src/_assets/image/flutter-lockup-bg.jpg" width="180">
 
 # 🚀 Hành Trình Chinh Phục Flutter & Dart
 
