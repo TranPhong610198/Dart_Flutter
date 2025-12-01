@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Logo.png" width="160" alt="Flutter Logo" />
+<img src="Logo.png" width="350" alt="Flutter Logo" />
 
 # 🚀 Hành Trình Chinh Phục Flutter & Dart
 
