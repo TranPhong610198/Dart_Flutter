@@ -24,26 +24,26 @@ Toàn bộ lộ trình được chia thành nhiều giai đoạn rõ ràng:
 
 ### **📌 Giai đoạn 1 — Dart Cơ Bản**
 
-* Installing Dart
-* Data Types
-* Dart Loops & Logic
-* Functions
-* User Input
-* Type Conversion (String ↔ Int)
-* OOP & Classes
-* Fizzbuzz Exercise
+* [x] Installing Dart
+* [x] Data Types
+* [x] Dart Loops & Logic
+* [x] Functions
+* [x] User Input
+* [x] Type Conversion (String ↔ Int)
+* [x] OOP & Classes
+* [x] Fizzbuzz Exercise
 
-### **📌 Giai đoạn 2 — Flutter UI Cơ Bản** *(Upcoming)*
+### **📌 Giai đoạn 2 — Flutter FPTU**
 
-* [ ] Cấu trúc thư mục Flutter
-* [ ] Widgets cơ bản: Container, Row, Column, Stack, ListView
+* [x] Lab 1 Hello Fluter 
+<!-- * [ ] Widgets cơ bản: Container, Row, Column, Stack, ListView
 * [ ] Stateful vs Stateless Widgets
 * [ ] Forms & Input Handling
 * [ ] Navigation (Navigator / GoRouter)
 * [ ] Assets, Fonts & Images
-* [ ] Responsive UI
+* [ ] Responsive UI -->
 
-### **📌 Giai đoạn 3 — Logic & Data Handling** *(Upcoming)*
+<!-- ### **📌 Giai đoạn 3 — Logic & Data Handling** *(Upcoming)*
 
 * [ ] Networking — REST API, HTTP, JSON
 * [ ] Local Storage — SharedPrefs, SQLite/Drift, Hive
@@ -56,28 +56,28 @@ Toàn bộ lộ trình được chia thành nhiều giai đoạn rõ ràng:
 * [ ] Clean Architecture
 * [ ] Testing (Unit & Widget Test)
 * [ ] CI/CD pipelines
-* [ ] Deploy Play Store / App Store
+* [ ] Deploy Play Store / App Store -->
 
 ---
 
-## 📱 Dự Án Thực Hành
+<!-- ## 📱 Dự Án Thực Hành
 
-| STT | Tên Dự Án               | Mô tả                                | Công nghệ             | Trạng thái       | Preview        |
-| --: | ----------------------- | ------------------------------------ | --------------------- | ---------------- | -------------- |
-|  01 | Hello World App         | Làm quen widget cơ bản               | Dart + Flutter UI     | 🔄 Đang học      | *comming soon* |
-|  02 | Todo List App           | Quản lý công việc, CRUD LocalStorage | Flutter + Hive/SQLite | ⏳ Chưa thực hiện | *comming soon* |
-|  03 | Weather App *(dự kiến)* | Call API thời tiết realtime          | Flutter + HTTP API    | 🚧 Planned       | *updating*     |
+| STT | Tên Dự Án               | Mô tả                                | Công nghệ             |  Preview        |
+| --: | ----------------------- | ------------------------------------ | --------------------- | -------------- |
+|  01 | Hello World App         | Làm quen widget cơ bản               | Dart + Flutter UI     | *comming soon* |
+|  02 | Todo List App           | Quản lý công việc, CRUD LocalStorage | Flutter + Hive/SQLite | *comming soon* |
+|  03 | Weather App *(dự kiến)* | Call API thời tiết realtime          | Flutter + HTTP API    | *updating*     | -->
 
 ---
 
-## 🛠️ Công Cụ Sử Dụng
+<!-- ## 🛠️ Công Cụ Sử Dụng
 
 | Danh mục        | Công cụ                  |
 | --------------- | ------------------------ |
 | IDE             | VS Code / Android Studio |
 | UI Design       |                     |
 | API Testing     |                   |
-| Version Control | Git + GitHub             |
+| Version Control | Git + GitHub             | -->
 
 ---
 
@@ -86,7 +86,7 @@ Toàn bộ lộ trình được chia thành nhiều giai đoạn rõ ràng:
 | Tên tài liệu                  | Link                                                                                                                       |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | Dart Language Tour            | [https://dart.dev/language](https://dart.dev/language)                                                                     |
-| Flutter Documentation         | [https://docs.flutter.dev](https://docs.flutter.dev)                                                                       |
+| Flutter Course         | [UFlutter & Dart - The Complete Guide](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/?couponCode=2021PM25) - Được chia sẻ từ [Đỗ Trung Hiếu](https://www.facebook.com/kudoxH)|
 | GeeksForGeeks Dart Tutorial   | [Dart Turtorial](https://www.geeksforgeeks.org/dart/dart-tutorial/)       |
 | Youtube – Dart Course | [Codemy.com](https://youtu.be/JZukfxvc7Mc?si=dT-42VQ8lM85lib9) |
 
