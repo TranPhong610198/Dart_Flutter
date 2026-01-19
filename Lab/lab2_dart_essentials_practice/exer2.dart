@@ -14,6 +14,7 @@ void main(){
   print('first set: $set1');
 
   // Ví set chỉ lưu các giá trị unique nên kết quả sẽ là Tran, Phong
+  // ignore: equal_elements_in_set
   Set<String> set2 = {'Tran', 'Phong', 'Tran'};
   print('second set: $set2');
   // Để thêm phần tử vào Set có thể dùng add, addAll

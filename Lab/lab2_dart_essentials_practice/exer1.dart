@@ -4,5 +4,6 @@ void main(){
   bool sex = true;
 
   // Out
+  // ignore: dead_code
   print("Tên: $name\nTuổi: $age\nGiới tính: ${sex? 'Nam':'Nữ' }");
 }
