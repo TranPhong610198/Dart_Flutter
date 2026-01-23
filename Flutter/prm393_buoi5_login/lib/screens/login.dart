@@ -21,12 +21,13 @@ class LoginScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image(
+                    // width: double.infinity,
                     height: 150,
-                    image: AssetImage('assets/images/img.png'),
+                    image: AssetImage('assets/images/flutter_logo.png'),
                   ),
-                  Text('loginTitle', textAlign: TextAlign.center),
+                  Text('loginTitle',style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
                   const SizedBox(height: 8.0),
-                  Text('loginSubTitle', textAlign: TextAlign.center),
+                  Text('loginSubTitle loginSubTitle loginSubTitle loginSubTitle loginSubTitle loginSubTitle loginSubTitle loginSubTitle '),
                 ],
               ),
 
@@ -39,7 +40,7 @@ class LoginScreen extends StatelessWidget {
                       ///Email
                       TextFormField(
                         decoration: const InputDecoration(
-                          prefixIcon: Icon(Icons.subdirectory_arrow_right),
+                          prefixIcon: Icon(Icons.email),
                           labelText: 'Email',
                         ),
                       ),
