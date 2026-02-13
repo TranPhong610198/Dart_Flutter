@@ -10,11 +10,12 @@ class LoginScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.only(
             top: 56.0,
-            left: 24.0,
-            bottom: 24.0,
-            right: 24.0,
+            left: 32.0,
+            bottom: 32.0,
+            right: 32.0,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Logo title and subtitle
               Column(
@@ -25,9 +26,9 @@ class LoginScreen extends StatelessWidget {
                     height: 150,
                     image: AssetImage('assets/images/flutter_logo.png'),
                   ),
-                  Text('loginTitle',style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
+                  Text('MyPSchools',style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
                   const SizedBox(height: 8.0),
-                  Text('loginSubTitle loginSubTitle loginSubTitle loginSubTitle loginSubTitle loginSubTitle loginSubTitle loginSubTitle '),
+                  Text('Login to follow your childrens'),
                 ],
               ),
 
@@ -87,76 +88,88 @@ class LoginScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 16.0),
 
-                      /// Create Account Button
-                      SizedBox(
-                        width: double.infinity,
-                        child: OutlinedButton(
-                          onPressed: () {},
-                          child: Text("Register"),
-                        ),
-                      ),
+                      // /// Create Account Button
+                      // SizedBox(
+                      //   width: double.infinity,
+                      //   child: OutlinedButton(
+                      //     onPressed: () {},
+                      //     child: Text("Register"),
+                      //   ),
+                      // ),
                       // const SizedBox(height: 32.0,),
                     ],
                   ),
                 ),
               ),
 
-              /// Divider
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Divider(
-                      color: Colors.grey,
-                      thickness: 0.5,
-                      indent: 60,
-                      endIndent: 5,
-                    ),
-                  ),
-                  Text(
-                    "or sign in with",
-                    style: Theme.of(context).textTheme.labelMedium,
-                  ),
-                  Flexible(
-                    child: Divider(
-                      color: Colors.grey,
-                      thickness: 0.5,
-                      indent: 5,
-                      endIndent: 60,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 32.0,),
-
-              /// Footer
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.flutter_dash),
-                    ),
-                  ),
-                  const SizedBox(width: 16.0,),
-
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.grey),
-                      borderRadius: BorderRadius.circular(100),
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.facebook),
-                    ),
-                  ),
-                ],
-              ),
+              // /// Divider
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Flexible(
+              //       child: Divider(
+              //         color: Colors.grey,
+              //         thickness: 0.5,
+              //         indent: 60,
+              //         endIndent: 5,
+              //       ),
+              //     ),
+              //     Text(
+              //       "or sign in with",
+              //       style: Theme.of(context).textTheme.labelMedium,
+              //     ),
+              //     Flexible(
+              //       child: Divider(
+              //         color: Colors.grey,
+              //         thickness: 0.5,
+              //         indent: 5,
+              //         endIndent: 60,
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // const SizedBox(height: 32.0,),
+              //
+              // /// Footer
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     Container(
+              //       decoration: BoxDecoration(
+              //         border: Border.all(color: Colors.grey),
+              //         borderRadius: BorderRadius.circular(100),
+              //       ),
+              //       child: IconButton(
+              //         onPressed: () {},
+              //         icon: Icon(Icons.flutter_dash),
+              //       ),
+              //     ),
+              //     const SizedBox(width: 16.0,),
+              //
+              //     Container(
+              //       decoration: BoxDecoration(
+              //         border: Border.all(color: Colors.grey),
+              //         borderRadius: BorderRadius.circular(100),
+              //       ),
+              //       child: IconButton(
+              //         onPressed: () {},
+              //         icon: Icon(Icons.facebook),
+              //       ),
+              //     ),
+              //     const SizedBox(width: 16.0,),
+              //
+              //     Container(
+              //       decoration: BoxDecoration(
+              //         border: Border.all(color: Colors.grey),
+              //         borderRadius: BorderRadius.circular(100),
+              //       ),
+              //       child: IconButton(
+              //         onPressed: () {},
+              //         icon: Icon(Icons.apple),
+              //       ),
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),
