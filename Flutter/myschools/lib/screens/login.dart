@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'verify_email.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -56,7 +57,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const _InputLabel(label: 'Mật khẩu'),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const VerifyEmailScreen()),
+                      );
+                    },
                     child: const Text('Quên mật khẩu ?',
                         style: TextStyle(color: Color(0xFFF16623))),
                   ),
@@ -87,7 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     backgroundColor: const Color(0xFFF16623),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                   ),
-                  onPressed: () {},
+                  onPressed: () { },
                   child: const Text('Đăng nhập',
                       style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
                 ),
