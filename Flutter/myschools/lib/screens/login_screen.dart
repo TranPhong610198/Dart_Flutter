@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myschools/screens/home_screen.dart';
+
 import 'verify_email.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -60,15 +62,22 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const VerifyEmailScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => const VerifyEmailScreen(),
+                        ),
                       );
                     },
-                    child: const Text('Quên mật khẩu ?',
-                        style: TextStyle(color: Color(0xFFF16623))),
+                    child: const Text(
+                      'Quên mật khẩu ?',
+                      style: TextStyle(color: Color(0xFFF16623)),
+                    ),
                   ),
                 ],
               ),
-              _CustomTextField(controller: _passwordController, isPassword: true),
+              _CustomTextField(
+                controller: _passwordController,
+                isPassword: true,
+              ),
 
               // Ghi nhớ đăng nhập
               Row(
@@ -91,11 +100,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFF16623),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
-                  onPressed: () { },
-                  child: const Text('Đăng nhập',
-                      style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold)),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const HomeScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Đăng nhập',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
 
@@ -114,11 +138,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   style: OutlinedButton.styleFrom(
                     side: const BorderSide(color: Color(0xFFFFEFE7)),
                     backgroundColor: const Color(0xFFFFEFE7),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                   ),
                   onPressed: () {},
-                  child: const Text('FEID',
-                      style: TextStyle(color: Color(0xFFF16623), fontSize: 18, fontWeight: FontWeight.bold)),
+                  child: const Text(
+                    'FEID',
+                    style: TextStyle(
+                      color: Color(0xFFF16623),
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
 
@@ -142,6 +174,7 @@ class _LoginScreenState extends State<LoginScreen> {
 // Reusable Components để code sạch hơn
 class _InputLabel extends StatelessWidget {
   final String label;
+
   const _InputLabel({required this.label});
 
   @override
@@ -156,6 +189,7 @@ class _InputLabel extends StatelessWidget {
 class _CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final bool isPassword;
+
   const _CustomTextField({required this.controller, this.isPassword = false});
 
   @override
@@ -185,7 +219,10 @@ class _OrDivider extends StatelessWidget {
         Expanded(child: Divider()),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Text('Hoặc đăng nhập bằng', style: TextStyle(color: Colors.grey, fontSize: 12)),
+          child: Text(
+            'Hoặc đăng nhập bằng',
+            style: TextStyle(color: Colors.grey, fontSize: 12),
+          ),
         ),
         Expanded(child: Divider()),
       ],
