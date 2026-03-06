@@ -1,10 +1,5 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/naho?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/myfschool?createDatabaseIfNotExist=true
     username: root
     password: admin123
-
-aws:
-  region: ap-southeast-1
-  s3:
-    bucket: keria-demo-bucket

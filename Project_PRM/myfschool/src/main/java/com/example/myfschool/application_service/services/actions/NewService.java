@@ -1,4 +1,6 @@
 package com.example.myfschool.application_service.services.actions;
 
-public class NewService {
+import com.example.myfschool.application_service.services.interfaces.INewService;
+
+public class NewService implements INewService {
 }

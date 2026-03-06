@@ -1,4 +1,4 @@
-package com.example.myfschool.infrastructure.repositories;
+package com.example.myfschool.infrastructure.repositories.base;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;

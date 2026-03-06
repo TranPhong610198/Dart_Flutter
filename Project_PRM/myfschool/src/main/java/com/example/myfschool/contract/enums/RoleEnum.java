@@ -1,4 +1,5 @@
 package com.example.myfschool.contract.enums;
 
-public enum RoleRnum {
+public enum RoleEnum {
+    STUDENT, TEACHER
 }

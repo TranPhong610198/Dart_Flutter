@@ -1,4 +1,5 @@
 package com.example.myfschool.contract.enums;
 
-public enum NewEnum {
+public enum FormStatusEnum {
+    PENDING, APPROVED, REJECTED
 }
