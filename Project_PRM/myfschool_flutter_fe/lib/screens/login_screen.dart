@@ -6,8 +6,8 @@ import 'verify_email.dart';
 
 import 'package:myfschool_flutter_fe/widgets/input_label.dart';
 import 'package:myfschool_flutter_fe/widgets/custom_text_field.dart';
-import 'package:myfschool_flutter_fe/widgets/or_divider.dart';
 import 'package:myfschool_flutter_fe/widgets/password_text_field.dart';
+import 'package:myfschool_flutter_fe/widgets/copyright_footer.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -129,7 +129,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const SizedBox(height: 30),
 
               // Divider "Hoặc"
-              const OrDivider(),
+              const _OrDivider(),
 
               const SizedBox(height: 20),
 
@@ -159,17 +159,32 @@ class _LoginScreenState extends State<LoginScreen> {
 
               const SizedBox(height: 180),
               // Footer
-              const Center(
-                child: Text(
-                  'Phiên bản 2.1.0.0\nCopyright FPT Schools',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.grey, fontSize: 12),
-                ),
-              ),
+              const CopyrightFooter(),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _OrDivider extends StatelessWidget {
+  const _OrDivider();
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: const [
+        Expanded(child: Divider()),
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            'Hoặc đăng nhập bằng',
+            style: TextStyle(color: Colors.grey, fontSize: 12),
+          ),
+        ),
+        Expanded(child: Divider()),
+      ],
     );
   }
 }

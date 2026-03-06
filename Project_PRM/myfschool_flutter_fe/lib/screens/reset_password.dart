@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myfschool_flutter_fe/widgets/copyright_footer.dart';
 
 import 'package:myfschool_flutter_fe/widgets/input_label.dart';
 import 'package:myfschool_flutter_fe/widgets/password_text_field.dart';
@@ -69,16 +70,7 @@ class _ResetPasswordScreenState extends State<ResetPasswordScreen> {
                       ),
                     ),
                     const Spacer(),
-                    const Padding(
-                      padding: EdgeInsets.only(bottom: 20),
-                      child: Center(
-                        child: Text(
-                          'Phiên bản 2.1.0.0\nCopyright FPT Schools',
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
-                        ),
-                      ),
-                    ),
+                    const CopyrightFooter()
                   ],
                 ),
               ),
