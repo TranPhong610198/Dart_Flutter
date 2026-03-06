@@ -1,4 +1,4 @@
-package com.naho.application_service.dtos.responses.common;
+package com.example.myfschool.application_service.dtos.responses.common;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

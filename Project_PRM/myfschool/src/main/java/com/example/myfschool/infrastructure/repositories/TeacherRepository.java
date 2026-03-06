@@ -1,4 +1,4 @@
-package com.example.myfschool.infrastructure.repositories.auth;
+package com.example.myfschool.infrastructure.repositories;
 
 import com.example.myfschool.infrastructure.entities.TeacherEntity;
 import com.example.myfschool.infrastructure.repositories.base.BaseRepository;

@@ -1,6 +1,6 @@
-package com.example.myfschool.infrastructure.repositories.auth;
+package com.example.myfschool.infrastructure.repositories;
 
-import com.example.myfschool.infrastructure.entities.auth.UserEntity;
+import com.example.myfschool.infrastructure.entities.UserEntity;
 import com.example.myfschool.infrastructure.repositories.base.BaseRepository;
 import org.springframework.stereotype.Repository;
 

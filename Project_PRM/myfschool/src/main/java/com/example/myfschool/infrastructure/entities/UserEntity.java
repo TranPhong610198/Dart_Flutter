@@ -1,4 +1,4 @@
-package com.example.myfschool.infrastructure.entities.auth;
+package com.example.myfschool.infrastructure.entities;
 
 import com.example.myfschool.contract.enums.RoleEnum;
 import com.example.myfschool.infrastructure.entities.base.BaseEntity;

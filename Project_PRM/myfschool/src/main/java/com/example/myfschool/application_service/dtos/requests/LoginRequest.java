@@ -1,4 +1,4 @@
-package com.example.myfschool.application_service.dtos.requests.auth;
+package com.example.myfschool.application_service.dtos.requests;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

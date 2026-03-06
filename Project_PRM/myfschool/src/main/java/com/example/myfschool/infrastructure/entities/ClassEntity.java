@@ -6,7 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Entity
-@Table(name = "classes") // Đã sửa từ teachers
+@Table(name = "classes")
 @Getter
 @Setter
 @Builder
@@ -17,6 +17,11 @@ public class ClassEntity extends BaseEntity {
 
     @Column(name = "name", nullable = false)
     String name;
+
+    // BỔ SUNG TRƯỜNG NÀY
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "school_id", nullable = false)
+    SchoolEntity school;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "homeroom_teacher_id")
