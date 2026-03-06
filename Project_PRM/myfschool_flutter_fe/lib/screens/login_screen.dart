@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'home_screen.dart';
 import 'verify_email.dart';
 
@@ -8,6 +7,8 @@ import 'package:myfschool_flutter_fe/widgets/input_label.dart';
 import 'package:myfschool_flutter_fe/widgets/custom_text_field.dart';
 import 'package:myfschool_flutter_fe/widgets/password_text_field.dart';
 import 'package:myfschool_flutter_fe/widgets/copyright_footer.dart';
+
+import 'package:myfschool_flutter_fe/controller/auth_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -18,8 +19,12 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool _rememberMe = true;
+  bool _isLoading = false;
+
   final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
+
+  final _authController = AuthController();
 
   @override
   void dispose() {
@@ -27,6 +32,45 @@ class _LoginScreenState extends State<LoginScreen> {
     _phoneController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  Future<void> _handleLogin() async {
+    final phone = _phoneController.text.trim();
+    final password = _passwordController.text.trim();
+
+    if (phone.isEmpty || password.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Vui lòng nhập đầy đủ số điện thoại và mật khẩu')),
+      );
+      return;
+    }
+
+    setState(() => _isLoading = true);
+
+    try {
+      final user = await _authController.login(phone, password);
+
+      // Nếu không có lỗi, chuyển sang HomeScreen
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomeScreen(user: user),
+          ),
+        );
+      }
+    } catch (e) {
+      // Hiển thị lỗi từ Controller ném ra (đã loại bỏ chữ "Exception: " thừa thãi)
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(e.toString().replaceAll('Exception: ', ''))),
+        );
+      }
+    } finally {
+      if (mounted) {
+        setState(() => _isLoading = false);
+      }
+    }
   }
 
   @override
@@ -44,7 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
               const Image(
                 // width: double.infinity,
                 height: 60,
-                image: AssetImage('assets/images/FPT_logo_2010.svg.png'),
+                image: AssetImage('assets/images/FPT_logo_2010.png'),
               ),
               const SizedBox(height: 10),
               const Text(
@@ -107,14 +151,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
-                      ),
-                    );
-                  },
+                  onPressed: _isLoading ? null : _handleLogin,
                   child: const Text(
                     'Đăng nhập',
                     style: TextStyle(

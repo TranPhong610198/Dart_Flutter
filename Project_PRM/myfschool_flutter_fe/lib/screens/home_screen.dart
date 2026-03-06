@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:myfschool_flutter_fe/models/user_model.dart';
+
+import 'login_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  final UserModel user;
+
+  const HomeScreen({super.key, required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +38,16 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   Row(
-                    children: const [
-                      Icon(Icons.search, size: 28),
-                      SizedBox(width: 15),
-                      Icon(Icons.notifications_none_outlined, size: 28),
+                    children: [
+                      const Icon(Icons.notifications_none_outlined, size: 28),
+                      const SizedBox(width: 15),
+                      // Icon(Icons.logout, size: 28),
+                      IconButton(
+                        onPressed: () => Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(builder: (context) => const LoginScreen()),
+                                (route) => false),
+                        icon: const Icon(Icons.logout, size: 28),)
                     ],
                   )
                 ],
@@ -64,17 +75,17 @@ class HomeScreen extends StatelessWidget {
                         const SizedBox(width: 15),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
+                          children: [
                             Text(
-                              'Trần Thập Nhất',
-                              style: TextStyle(
+                              user.fullName,
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              'HE186XXX',
-                              style: TextStyle(color: Colors.white70),
+                              user.code,
+                              style: const TextStyle(color: Colors.white70),
                             ),
                           ],
                         )
@@ -82,14 +93,20 @@ class HomeScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
                     Row(
-                      children: const [
-                        Icon(Icons.door_front_door_outlined, color: Colors.white, size: 20),
-                        SizedBox(width: 5),
-                        Text('9A5', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
-                        SizedBox(width: 20),
-                        Icon(Icons.business, color: Colors.white, size: 20),
-                        SizedBox(width: 5),
-                        Text('FSchool Hòa Lạc - THCS', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                      children: [
+                        const Icon(Icons.door_front_door_outlined, color: Colors.white, size: 20),
+                        const SizedBox(width: 5),
+                        Text(user.className, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                        const SizedBox(width: 20),
+                        const Icon(Icons.business, color: Colors.white, size: 20),
+                        const SizedBox(width: 5),
+                        Expanded( // Dùng Expanded đề phòng tên trường quá dài bị lỗi tràn màn hình
+                          child: Text(
+                            user.schoolName,
+                            style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
                       ],
                     )
                   ],
