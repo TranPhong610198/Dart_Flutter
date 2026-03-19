@@ -28,10 +28,18 @@ class _SelectChildBottomSheetState extends State<SelectChildBottomSheet> {
     try {
       final children = await _authController.getChildren(
           widget.parentUser.id, widget.parentUser.accessToken);
-      setState(() {
-        _children = children;
-        _isLoading = false;
-      });
+
+      if (!mounted) return;
+
+      if (children.length == 1) {
+        // ✅ Bug 2 fix: Auto-select immediately, skip the bottom sheet
+        await _selectChild(children[0]);
+      } else {
+        setState(() {
+          _children = children;
+          _isLoading = false;
+        });
+      }
     } catch (e) {
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -44,12 +52,16 @@ class _SelectChildBottomSheetState extends State<SelectChildBottomSheet> {
 
   Future<void> _selectChild(UserModel child) async {
     final prefs = await SharedPreferences.getInstance();
+    // ✅ Bug 1 fix: Store child info separately, pass parent to HomeScreen
     await prefs.setString('selectedChildId', child.id.toString());
-    
+    await prefs.setString('selectedChildName', child.fullName);
+    await prefs.setString('selectedChildClassName', child.className);
+
     if (mounted) {
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => HomeScreen(user: child)),
+        // Pass the PARENT's UserModel so role-based UI (e.g., Đơn từ) works correctly
+        MaterialPageRoute(builder: (context) => HomeScreen(user: widget.parentUser)),
         (route) => false,
       );
     }

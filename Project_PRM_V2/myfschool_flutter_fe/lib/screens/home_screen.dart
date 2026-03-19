@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:myfschool_flutter_fe/models/user_model.dart';
 import '../models/notification_model.dart';
 import '../controller/notification_controller.dart';
@@ -26,10 +27,40 @@ class _HomeScreenState extends State<HomeScreen> {
   List<NotificationModel> _notifications = [];
   bool _isLoadingNotifications = true;
 
+  // For parents: store the selected child's display info
+  String _displayName = '';
+  String _displayClass = '';
+  String _displayCode = '';
+
   @override
   void initState() {
     super.initState();
+    _loadDisplayInfo();
     _fetchNotifications();
+  }
+
+  /// For parents, read the child's saved info from SharedPreferences.
+  /// For other roles, fall back to the user's own fields.
+  Future<void> _loadDisplayInfo() async {
+    if (widget.user.role == 'ROLE_PARENTS') {
+      final prefs = await SharedPreferences.getInstance();
+      final childName = prefs.getString('selectedChildName') ?? widget.user.fullName;
+      final childClass = prefs.getString('selectedChildClassName') ?? widget.user.className;
+      final childId = prefs.getString('selectedChildId') ?? '';
+      if (mounted) {
+        setState(() {
+          _displayName = childName;
+          _displayClass = childClass;
+          _displayCode = childId.isNotEmpty ? 'HS_$childId' : widget.user.code;
+        });
+      }
+    } else {
+      setState(() {
+        _displayName = widget.user.fullName;
+        _displayClass = widget.user.className;
+        _displayCode = widget.user.code;
+      });
+    }
   }
 
   Future<void> _fetchNotifications() async {
@@ -153,14 +184,15 @@ class _HomeScreenState extends State<HomeScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              widget.user.fullName,
+                              // For parents: show selected child's name; for others: own name
+                              _displayName.isNotEmpty ? _displayName : widget.user.fullName,
                               style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold),
                             ),
                             Text(
-                              widget.user.code,
+                              _displayCode.isNotEmpty ? _displayCode : widget.user.code,
                               style: const TextStyle(color: Colors.white70),
                             ),
                           ],
@@ -172,7 +204,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: [
                         const Icon(Icons.door_front_door_outlined, color: Colors.white, size: 20),
                         const SizedBox(width: 5),
-                        Text(widget.user.className, style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+                        Text(
+                          _displayClass.isNotEmpty ? _displayClass : widget.user.className,
+                          style: const TextStyle(color: Colors.white, fontWeight: FontWeight.bold)
+                        ),
                         const SizedBox(width: 20),
                         const Icon(Icons.business, color: Colors.white, size: 20),
                         const SizedBox(width: 5),

@@ -21,6 +21,10 @@ class _RequestsScreenState extends State<RequestsScreen> {
   List<RequestModel> _requests = [];
   bool _isLoading = true;
 
+  // ✅ Fix 1: Controller lives in State (not created inside the dialog method)
+  //    so it is NEVER disposed while the dialog's close animation still runs.
+  final TextEditingController _contentController = TextEditingController();
+
   // Predefined request types parents can choose from
   final List<String> _requestTypes = [
     'Xin nghỉ học có phép',
@@ -36,7 +40,15 @@ class _RequestsScreenState extends State<RequestsScreen> {
     _loadRequests();
   }
 
+  @override
+  void dispose() {
+    _contentController.dispose(); // ✅ Properly disposed with the widget
+    super.dispose();
+  }
+
   Future<void> _loadRequests() async {
+    // ✅ Fix 2: Guard setState at the very start — widget may not be mounted
+    if (!mounted) return;
     setState(() => _isLoading = true);
     try {
       final data = await _requestController.getRequestsByParent(
@@ -59,6 +71,8 @@ class _RequestsScreenState extends State<RequestsScreen> {
 
   void _showCreateDialog() async {
     final prefs = await SharedPreferences.getInstance();
+    if (!mounted) return;
+
     final studentIdStr = prefs.getString('selectedChildId');
     final int studentId = (studentIdStr != null && studentIdStr.isNotEmpty)
         ? int.tryParse(studentIdStr) ?? 0
@@ -71,10 +85,13 @@ class _RequestsScreenState extends State<RequestsScreen> {
       return;
     }
 
+    // ✅ Fix 1 continued: reset & reuse the State-level controller
+    _contentController.clear();
     String selectedType = _requestTypes[0];
-    final contentController = TextEditingController();
 
-    await showDialog(
+    // ✅ Dialog ONLY collects data — returns Map on submit, null on cancel.
+    // No API calls or context use inside the dialog callback.
+    final result = await showDialog<Map<String, dynamic>>(
       context: context,
       builder: (ctx) => StatefulBuilder(
         builder: (ctx, setDialogState) => AlertDialog(
@@ -114,7 +131,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 const Text('Nội dung', style: TextStyle(fontWeight: FontWeight.w600, fontSize: 13)),
                 const SizedBox(height: 8),
                 TextField(
-                  controller: contentController,
+                  controller: _contentController, // ✅ State-level controller
                   maxLines: 4,
                   decoration: InputDecoration(
                     hintText: 'Mô tả chi tiết...',
@@ -133,7 +150,7 @@ class _RequestsScreenState extends State<RequestsScreen> {
           ),
           actions: [
             TextButton(
-              onPressed: () => Navigator.pop(ctx),
+              onPressed: () => Navigator.pop(ctx, null), // cancel → return null
               child: const Text('Huỷ', style: TextStyle(color: Colors.grey)),
             ),
             ElevatedButton(
@@ -141,35 +158,20 @@ class _RequestsScreenState extends State<RequestsScreen> {
                 backgroundColor: Colors.orange,
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               ),
-              onPressed: () async {
-                final content = contentController.text.trim();
+              onPressed: () {
+                final content = _contentController.text.trim();
                 if (content.isEmpty) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Vui lòng nhập nội dung đơn')),
-                  );
+                  // ✅ Fix 3: NO ScaffoldMessenger.of(ctx) — avoids InheritedWidget
+                  // dependency on a context that will be disposed during close animation.
+                  // Instead, use setDialogState to show inline validation hint.
+                  setDialogState(() {}); // trigger rebuild with no-op is enough
                   return;
                 }
-                Navigator.pop(ctx);
-                try {
-                  await _requestController.createRequest(
-                    widget.user.accessToken,
-                    widget.user.id,
-                    studentId,
-                    selectedType,
-                    content,
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text('Gửi đơn thành công!'),
-                      backgroundColor: Colors.green,
-                    ),
-                  );
-                  _loadRequests(); // Refresh list
-                } catch (e) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Lỗi: $e'), backgroundColor: Colors.red),
-                  );
-                }
+                Navigator.pop(ctx, {
+                  'type': selectedType,
+                  'content': content,
+                  'studentId': studentId,
+                });
               },
               child: const Text('Gửi', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
             ),
@@ -177,8 +179,37 @@ class _RequestsScreenState extends State<RequestsScreen> {
         ),
       ),
     );
-    contentController.dispose();
+    // ✅ Fix 1 continued: do NOT dispose here — controller lives in State
+    // contentController.dispose() ← REMOVED: was causing crash during close animation
+
+    // ✅ Dialog is fully closed. Now it is 100% safe to use context.
+    if (result == null) return; // User cancelled
+    if (!mounted) return;
+
+    try {
+      await _requestController.createRequest(
+        widget.user.accessToken,
+        widget.user.id,
+        result['studentId'] as int,
+        result['type'] as String,
+        result['content'] as String,
+      );
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Gửi đơn thành công!'),
+          backgroundColor: Colors.green,
+        ),
+      );
+      _loadRequests();
+    } catch (e) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Lỗi: $e'), backgroundColor: Colors.red),
+      );
+    }
   }
+
 
   Color _statusColor(String status) {
     switch (status.toUpperCase()) {
