@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: myfschool_V2
+  profiles:
+    active: uat 
+
+server:
+  port: 8080

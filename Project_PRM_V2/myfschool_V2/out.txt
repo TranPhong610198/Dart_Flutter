@@ -1,0 +1,23 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:myfschool_V2 >----------------------
+[INFO] Building myfschool_V2 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ myfschool_V2 ---
+[INFO] Deleting D:\CODING\Dart_Flutter\Project_PRM_V2\myfschool_V2\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ myfschool_V2 ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ myfschool_V2 ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 23 source files with javac [debug parameters release 17] to target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.454 s
+[INFO] Finished at: 2026-03-12T17:23:55+07:00
+[INFO] ------------------------------------------------------------------------

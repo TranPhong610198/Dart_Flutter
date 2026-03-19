@@ -1,0 +1,168 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.example:myfschool_V2 >----------------------
+[INFO] Building myfschool_V2 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ myfschool_V2 ---
+[INFO] Deleting D:\CODING\Dart_Flutter\Project_PRM_V2\myfschool_V2\target
+[INFO] 
+[INFO] >>> spring-boot:4.0.3:run (default-cli) > test-compile @ myfschool_V2 >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ myfschool_V2 ---
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ myfschool_V2 ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 18 source files with javac [debug parameters release 17] to target\classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ myfschool_V2 ---
+[INFO] skip non existing resourceDirectory D:\CODING\Dart_Flutter\Project_PRM_V2\myfschool_V2\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ myfschool_V2 ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 1 source file with javac [debug parameters release 17] to target\test-classes
+[INFO] 
+[INFO] <<< spring-boot:4.0.3:run (default-cli) < test-compile @ myfschool_V2 <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:4.0.3:run (default-cli) @ myfschool_V2 ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v4.0.3)
+
+2026-03-12T17:51:51.263+07:00  INFO 26972 --- [myfschool_V2] [           main] c.e.myfschool_V2.MyfschoolV2Application  : Starting MyfschoolV2Application using Java 17.0.9 with PID 26972 (D:\CODING\Dart_Flutter\Project_PRM_V2\myfschool_V2\target\classes started by tphon in D:\CODING\Dart_Flutter\Project_PRM_V2\myfschool_V2)
+2026-03-12T17:51:51.266+07:00  INFO 26972 --- [myfschool_V2] [           main] c.e.myfschool_V2.MyfschoolV2Application  : No active profile set, falling back to 1 default profile: "default"
+2026-03-12T17:51:51.744+07:00  INFO 26972 --- [myfschool_V2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-12T17:51:51.784+07:00  INFO 26972 --- [myfschool_V2] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 2 JPA repository interfaces.
+2026-03-12T17:51:52.113+07:00  INFO 26972 --- [myfschool_V2] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-03-12T17:51:52.122+07:00  INFO 26972 --- [myfschool_V2] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-12T17:51:52.122+07:00  INFO 26972 --- [myfschool_V2] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.18]
+2026-03-12T17:51:52.170+07:00  INFO 26972 --- [myfschool_V2] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 868 ms
+2026-03-12T17:51:52.446+07:00  INFO 26972 --- [myfschool_V2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-12T17:51:52.613+07:00  INFO 26972 --- [myfschool_V2] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77c66a4f
+2026-03-12T17:51:52.615+07:00  INFO 26972 --- [myfschool_V2] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-12T17:51:52.649+07:00  INFO 26972 --- [myfschool_V2] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/myfschool_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true (MySQL 9.3)
+2026-03-12T17:51:52.658+07:00  WARN 26972 --- [myfschool_V2] [           main] o.f.c.internal.database.base.Database    : Using MySQL 9.3 which is newer than the version Flyway has been verified with. The latest verified version of MySQL is 8.1.
+2026-03-12T17:51:52.679+07:00  INFO 26972 --- [myfschool_V2] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `myfschool_db`.`flyway_schema_history` does not exist yet
+2026-03-12T17:51:52.681+07:00  INFO 26972 --- [myfschool_V2] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.013s)
+2026-03-12T17:51:52.692+07:00  INFO 26972 --- [myfschool_V2] [           main] org.flywaydb.core.Flyway                 : All configured schemas are empty; baseline operation skipped. A baseline or migration script with a lower version than the baseline version may execute if available. Check the Schemas parameter if this is not intended.
+2026-03-12T17:51:52.694+07:00  INFO 26972 --- [myfschool_V2] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `myfschool_db`.`flyway_schema_history` ...
+2026-03-12T17:51:52.740+07:00  INFO 26972 --- [myfschool_V2] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema `myfschool_db`: << Empty Schema >>
+2026-03-12T17:51:52.751+07:00  INFO 26972 --- [myfschool_V2] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema `myfschool_db` to version "1 - Init schema"
+2026-03-12T17:51:52.977+07:00  INFO 26972 --- [myfschool_V2] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema `myfschool_db`, now at version v1 (execution time 00:00.202s)
+2026-03-12T17:51:53.047+07:00  INFO 26972 --- [myfschool_V2] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-03-12T17:51:53.080+07:00  INFO 26972 --- [myfschool_V2] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.2.4.Final
+2026-03-12T17:51:53.412+07:00  INFO 26972 --- [myfschool_V2] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-12T17:51:53.487+07:00  INFO 26972 --- [myfschool_V2] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:mysql://localhost:3306/myfschool_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true&createDatabaseIfNotExist=true]
+	Database driver: MySQL Connector/J
+	Database dialect: MySQLDialect
+	Database version: 9.3
+	Default catalog/schema: myfschool_db/undefined
+	Autocommit mode: undefined/unknown
+	Isolation level: REPEATABLE_READ [default REPEATABLE_READ]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-12T17:51:54.187+07:00  INFO 26972 --- [myfschool_V2] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-12T17:51:54.242+07:00  INFO 26972 --- [myfschool_V2] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-12T17:51:54.293+07:00  INFO 26972 --- [myfschool_V2] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-03-12T17:51:54.424+07:00  WARN 26972 --- [myfschool_V2] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-12T17:51:54.640+07:00  INFO 26972 --- [myfschool_V2] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8080 (http) with context path '/'
+2026-03-12T17:51:54.645+07:00  INFO 26972 --- [myfschool_V2] [           main] c.e.myfschool_V2.MyfschoolV2Application  : Started MyfschoolV2Application in 3.739 seconds (process running for 4.028)
+2026-03-12T17:52:06.606+07:00  INFO 26972 --- [myfschool_V2] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-12T17:52:06.607+07:00  INFO 26972 --- [myfschool_V2] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-12T17:52:06.608+07:00  INFO 26972 --- [myfschool_V2] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role_id,
+        u1_0.token 
+    from
+        users u1_0 
+    where
+        u1_0.phone=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        roles r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    update
+        users 
+    set
+        full_name=?,
+        password=?,
+        phone=?,
+        role_id=?,
+        token=? 
+    where
+        id=?
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.full_name,
+        u1_0.password,
+        u1_0.phone,
+        u1_0.role_id,
+        r1_0.id,
+        r1_0.name,
+        u1_0.token 
+    from
+        users u1_0 
+    join
+        roles r1_0 
+            on r1_0.id=u1_0.role_id 
+    where
+        u1_0.id=?
+Hibernate: 
+    select
+        c1_0.parent_id,
+        c1_1.id,
+        c1_1.full_name,
+        c1_1.password,
+        c1_1.phone,
+        c1_1.role_id,
+        r1_0.id,
+        r1_0.name,
+        c1_1.token 
+    from
+        parent_student c1_0 
+    join
+        users c1_1 
+            on c1_1.id=c1_0.student_id 
+    left join
+        roles r1_0 
+            on r1_0.id=c1_1.role_id 
+    where
+        c1_0.parent_id=?
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  18:17 min
+[INFO] Finished at: 2026-03-12T18:10:03+07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:4.0.3:run (default-cli) on project myfschool_V2: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
