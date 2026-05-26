@@ -7,7 +7,6 @@ INSERT INTO schools (name, address, created_by) VALUES
 
 -- ==========================================
 -- 2. Insert Users (1 Admin, 2 Teacher, 2 Student)
--- Pass "123456" hash = $2a$10$Dow.y1uSj.sKz5.3Z3i1n.S/uI0r1.zM1D6N1I3i1D4g.p2Z5Z9qO
 -- ==========================================
 INSERT INTO users (phone, password, role, created_by) VALUES
                                                           ('0901234567', 'admin123', 'ADMIN', 1),

@@ -27,10 +27,10 @@ public class AuthServiceAction implements IAuthService {
         UserEntity user = userRepository.findByPhone(request.getPhone())
                 .orElseThrow(() -> new RuntimeException("Tài khoản hoặc mật khẩu không chính xác"));
 
-        // 2. Validate Password (Sau này sẽ bật BCrypt lên)
-        // if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-        //     throw new RuntimeException("Tài khoản hoặc mật khẩu không chính xác");
-        // }
+//         2. Validate Password (Sau này sẽ bật BCrypt lên)
+         if (!(user.getPassword().equals(request.getPassword()))) {
+             throw new RuntimeException("Tài khoản hoặc mật khẩu không chính xác");
+         }
 
         // 3. Khởi tạo các biến Profile
         String fullName = null;

@@ -16,7 +16,7 @@ public class LoginResponse extends BaseResponse {
     String accessToken;
     String role;
     String fullName;
-    String code;       // Dùng chung cho Mã học sinh (HE...) hoặc Mã giáo viên
-    String className;  // Tên lớp (Ví dụ: 9A5)
-    String schoolName; // Tên trường (Ví dụ: FSchool Hòa Lạc - THCS)
+    String code;
+    String className;
+    String schoolName;
 }
